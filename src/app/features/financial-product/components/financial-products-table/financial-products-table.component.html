@@ -1,0 +1,54 @@
+<table>
+  <thead>
+    <tr>
+      <th>
+        Logo
+        <bp-info-icon description="Logo del producto"></bp-info-icon>
+      </th>
+      <th>
+        Nombre del producto
+        <bp-info-icon description="Nombre del producto"></bp-info-icon>
+      </th>
+      <th>
+        Descripción
+        <bp-info-icon description="Descripciób del producto"></bp-info-icon>
+      </th>
+      <th>
+        Fecha de liberación
+        <bp-info-icon
+          description="Fecha de liberación del producto"
+        ></bp-info-icon>
+      </th>
+      <th>
+        Fecha de reestructuración
+        <bp-info-icon
+          description="Fecha de reestructuración del producto"
+        ></bp-info-icon>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (financialProduct of financialProducts; track financialProduct) {
+    <tr>
+      <td>
+        <img [src]="financialProduct.logo" alt="Logo Producto" />
+      </td>
+      <td>{{ financialProduct.name }}</td>
+      <td>{{ financialProduct.description }}</td>
+      <td>{{ financialProduct.date_release | bpShortDate }}</td>
+      <td>
+        <div class="last-column">
+          <div>
+            {{ financialProduct.date_revision | bpShortDate }}
+          </div>
+
+          <bp-more-actions-button
+            (editItem)="editProduct.emit(financialProduct)"
+            (deleteItem)="deleteProduct.emit(financialProduct)"
+          ></bp-more-actions-button>
+        </div>
+      </td>
+    </tr>
+    }
+  </tbody>
+</table>

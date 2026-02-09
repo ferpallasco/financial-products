@@ -1,0 +1,15 @@
+header {
+  background-color: var(--white);
+  color: var(--blue500);
+  height: 60px;
+  line-height: 60px;
+  padding: 0px 16px;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  img {
+    cursor: pointer;
+    user-select: none;
+  }
+}

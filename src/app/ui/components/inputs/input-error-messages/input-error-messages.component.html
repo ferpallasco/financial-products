@@ -1,0 +1,26 @@
+@if(fc){ @if(fc.errors?.['idExists']){
+<p><ng-container>El ID ya existe!</ng-container></p>
+} @if(fc.errors?.['invalidDateFormat']){
+<p><ng-container>Formato de fecha inválido</ng-container></p>
+} @if(fc.errors?.['dateInPast']){
+<p><ng-container>Debe ser mayor o igual a la actual </ng-container></p>
+} @if(fc.errors?.['invalidDate']){
+<p><ng-container>La fecha no existe</ng-container></p>
+} @if(!fc.errors?.['invalidDateFormat'] && fc.errors?.['dateNotExactlyOneYear']
+&& !fc.errors?.['dateInPast']){
+<p><ng-container>Debe ser un año superior</ng-container></p>
+} @if(fc.errors?.['required']){
+<p><ng-container>Este campo es requerido!</ng-container></p>
+} @if(fc.errors?.['minlength']){
+<p>
+  <ng-container>La longitud debe ser como mínimo</ng-container>
+  {{ fc.errors?.['minlength']?.requiredLength }}
+  <ng-container>caracteres</ng-container>.
+</p>
+} @if(fc.errors?.['maxlength']){
+<p>
+  <ng-container>La longitud debe ser como máximo</ng-container>
+  {{ fc.errors?.['maxlength']?.requiredLength }}
+  <ng-container>caracteres</ng-container>.
+</p>
+} }

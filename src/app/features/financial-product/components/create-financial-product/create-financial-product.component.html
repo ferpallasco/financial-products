@@ -1,0 +1,123 @@
+<div class="form-container">
+  <div class="header">
+    <h2>{{ title }}</h2>
+  </div>
+
+  <bp-splitter></bp-splitter>
+
+  <div class="form">
+    <form [formGroup]="form" autocomplete="off">
+      <div class="bp-row">
+        <div class="pb-col">
+          <bp-input-form-field
+            label="ID"
+            formControlName="id"
+            [minlength]="3"
+            [maxlength]="10"
+            [hasError]="hasErrors(form.controls.id)"
+          >
+          </bp-input-form-field>
+
+          <!-- Errors -->
+          <bp-input-error-messages
+            *ngIf="InputValidation.checkInputErrors(form.controls.id)"
+            [fc]="form.controls.id"
+          ></bp-input-error-messages>
+        </div>
+        <div class="pb-col">
+          <bp-input-form-field
+            label="Nombre"
+            formControlName="name"
+            [minlength]="5"
+            [maxlength]="100"
+            [hasError]="hasErrors(form.controls.name)"
+          >
+          </bp-input-form-field>
+
+          <!-- Errors -->
+          <bp-input-error-messages
+            *ngIf="InputValidation.checkInputErrors(form.controls.name)"
+            [fc]="form.controls.name"
+          ></bp-input-error-messages>
+        </div>
+        <div class="pb-col">
+          <bp-input-form-field
+            label="Descripción"
+            formControlName="description"
+            [minlength]="10"
+            [maxlength]="200"
+            [hasError]="hasErrors(form.controls.description)"
+          >
+          </bp-input-form-field>
+
+          <!-- Errors -->
+          <bp-input-error-messages
+            *ngIf="InputValidation.checkInputErrors(form.controls.description)"
+            [fc]="form.controls.description"
+          ></bp-input-error-messages>
+        </div>
+        <div class="pb-col">
+          <bp-input-form-field
+            label="Logo"
+            formControlName="logo"
+            [minlength]="5"
+            [maxlength]="300"
+            [hasError]="hasErrors(form.controls.logo)"
+          >
+          </bp-input-form-field>
+
+          <!-- Errors -->
+          <bp-input-error-messages
+            *ngIf="InputValidation.checkInputErrors(form.controls.logo)"
+            [fc]="form.controls.logo"
+          ></bp-input-error-messages>
+        </div>
+        <div class="pb-col">
+          <bp-input-form-field
+            label="Fecha Liberación"
+            formControlName="date_release"
+            [hasError]="hasErrors(form.controls.date_release)"
+          >
+          </bp-input-form-field>
+
+          <!-- Errors -->
+          <bp-input-error-messages
+            *ngIf="InputValidation.checkInputErrors(form.controls.date_release)"
+            [fc]="form.controls.date_release"
+          ></bp-input-error-messages>
+        </div>
+        <div class="pb-col">
+          <bp-input-form-field
+            label="Fecha revisión"
+            formControlName="date_revision"
+            [hasError]="hasErrors(form.controls.date_revision)"
+          >
+          </bp-input-form-field>
+
+          <!-- Errors -->
+          <bp-input-error-messages
+            *ngIf="
+              InputValidation.checkInputErrors(form.controls.date_revision)
+            "
+            [fc]="form.controls.date_revision"
+          ></bp-input-error-messages>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="buttons-container">
+    <bp-secondary-button
+      [disabled]="!isFormDirty || verifiyingId"
+      (click)="reset()"
+      >Reiniciar</bp-secondary-button
+    >
+
+    <bp-primary-button
+      [disabled]="!isFormValid || verifiyingId"
+      (click)="send()"
+    >
+      {{ formData ? "Actualizar" : "Enviar" }}
+    </bp-primary-button>
+  </div>
+</div>

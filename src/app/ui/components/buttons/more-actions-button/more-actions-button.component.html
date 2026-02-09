@@ -1,0 +1,11 @@
+<div class="dropdown" [ngClass]="{ show: dropdownVisible }">
+  <button class="dropbtn" (click)="toggleDropdown()">
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+  </button>
+  <div class="dropdown-content">
+    <a (click)="editItem.emit()">Editar</a>
+    <a (click)="deleteItem.emit()">Eliminar</a>
+  </div>
+</div>

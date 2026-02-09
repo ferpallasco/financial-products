@@ -1,0 +1,28 @@
+.container {
+  padding: 16px;
+  .input-button-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    .searcher-input {
+      max-width: 155px;
+    }
+  }
+  .table-footer-container {
+    padding: 16px;
+    background-color: #fff;
+    .table-container {
+      overflow: auto;
+    }
+    .footer-container {
+      margin-top: 8px;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 48px;
+  }
+}

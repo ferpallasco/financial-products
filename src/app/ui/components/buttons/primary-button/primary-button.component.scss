@@ -1,0 +1,37 @@
+button {
+  width: 100%;
+}
+
+.btn-primary {
+  background-color: var(--yellow500); /* Color primary */
+  border: none;
+  border-radius: 4px;
+  color: var(--blue500);
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #e6c200; /* Color más oscuro al hacer hover */
+}
+
+.btn-primary:active {
+  background-color: #cca700; /* Color aún más oscuro al hacer click */
+}
+
+.btn-primary:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(255, 221, 0, 0.5); /* Sombra al enfocar */
+}
+
+.btn-primary:disabled,
+.btn-primary.disabled {
+  background-color: var(--yellow500);
+  opacity: 0.5;
+  cursor: not-allowed;
+}

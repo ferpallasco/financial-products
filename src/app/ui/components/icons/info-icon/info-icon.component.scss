@@ -1,0 +1,18 @@
+.info-icon-container {
+  position: relative;
+  display: inline-block;
+}
+
+.info-icon {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: var(--dark-grayish-blue);
+  color: var(--white);
+  text-align: center;
+  line-height: 16px;
+  font-size: 12px;
+  cursor: pointer;
+  margin-left: 5px;
+}

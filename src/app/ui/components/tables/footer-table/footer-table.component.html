@@ -1,0 +1,10 @@
+<section class="container">
+  <div class="left">{{ itemsNumber }} Resultados</div>
+  <div class="right">
+    <bp-basic-dropdown
+      [options]="pageSizeOptions"
+      [value]="pageSize"
+      (selected)="selectedPageSize.emit($event)"
+    ></bp-basic-dropdown>
+  </div>
+</section>

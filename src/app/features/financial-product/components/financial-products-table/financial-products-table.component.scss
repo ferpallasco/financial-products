@@ -1,0 +1,42 @@
+table {
+  width: 100%;
+  border-collapse: collapse;
+  thead {
+    background-color: #f9fafc;
+    height: 50px;
+    tr {
+      th {
+        min-width: 236px;
+        font-size: 0.8rem;
+      }
+    }
+  }
+}
+
+table,
+td {
+  border-top: 2px solid #f4f6f9;
+  border-bottom: 2px solid #f4f6f9;
+}
+
+th,
+td {
+  padding: 4px;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+img {
+  max-width: 46px;
+  height: auto;
+  border-radius: 50%;
+}
+
+.last-column {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

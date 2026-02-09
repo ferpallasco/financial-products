@@ -1,0 +1,21 @@
+.parent {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  .content-container {
+    overflow-y: auto;
+    flex-grow: 1;
+    background-color: #f4f6f9;
+    .alert-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-left: 16px;
+      padding-right: 16px;
+      bp-alert {
+        width: 100%;
+      }
+    }
+  }
+}

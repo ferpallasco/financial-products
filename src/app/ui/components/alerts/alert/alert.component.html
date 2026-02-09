@@ -1,0 +1,17 @@
+@if(message){
+<div
+  [ngClass]="{
+    success: type === 'success',
+    error: type === 'error',
+    info: type === 'info'
+  }"
+  class="alert"
+>
+  <ng-container [ngSwitch]="type">
+    <div *ngSwitchCase="'success'">✔️ {{ message }}</div>
+    <div *ngSwitchCase="'error'">❌ {{ message }}</div>
+    <div *ngSwitchCase="'info'">ℹ️ {{ message }}</div>
+  </ng-container>
+  <button class="close-btn" (click)="message = null">✖️</button>
+</div>
+}

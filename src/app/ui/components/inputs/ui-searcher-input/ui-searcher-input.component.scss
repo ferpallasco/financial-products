@@ -1,0 +1,23 @@
+.input-container {
+  p {
+    color: var(--blue500);
+    font-size: 0.75rem;
+    margin-left: 4px;
+    margin-top: -47px;
+    position: absolute;
+  }
+  input {
+    color: var(--blue500);
+    border: 2px solid var(--light-grayish-blue-two);
+    border-radius: 4px;
+    padding: 6px 12px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+    outline: none;
+    width: 100%;
+  }
+}
+
+.input-container input:focus {
+  border-color: var(--dark-grayish-blue);
+}

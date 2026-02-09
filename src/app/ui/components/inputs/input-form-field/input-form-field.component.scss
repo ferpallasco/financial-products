@@ -1,0 +1,18 @@
+.form-field {
+  display: flex;
+  flex-direction: column;
+  label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+  input {
+    height: 32px;
+    border-radius: 4px;
+    width: 100%;
+  }
+}
+
+.error {
+  border-color: var(--red);
+}

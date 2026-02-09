@@ -1,0 +1,18 @@
+<div class="form-field">
+  <label for="">{{ label }}</label>
+
+  <form [formGroup]="form" autocomplete="off">
+    <input
+      type="text"
+      [placeholder]="placeholder"
+      [disabled]="disabled"
+      formControlName="control"
+      (blur)="onTouched()"
+      [ngClass]="{
+        error: hasError
+      }"
+      [minlength]="minlength"
+      [maxlength]="maxlength"
+    />
+  </form>
+</div>

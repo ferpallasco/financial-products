@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="input-button-container">
+    <bp-ui-searcher-input
+      class="searcher-input"
+      placeholder="Search.."
+      (valueChange)="handleSearcherValueChange($event)"
+    ></bp-ui-searcher-input>
+    <bp-primary-button routerLink="/financial-products/create"
+      >Agregar</bp-primary-button
+    >
+  </div>
+
+  <div class="table-footer-container">
+    <ng-container *ngIf="gettingFinancialProducts; else results">
+      <div class="table-container">
+        <bp-financial-table-skeleton></bp-financial-table-skeleton>
+      </div>
+    </ng-container>
+
+    <ng-template #results>
+      <div class="table-container">
+        <bp-financial-products-table
+          [financialProducts]="elementsByPage"
+          (editProduct)="handleEditProduct($event)"
+          (deleteProduct)="handleDeleteProduct($event)"
+        ></bp-financial-products-table>
+      </div>
+
+      <div class="footer-container">
+        <bp-footer-table
+          [itemsNumber]="elementsByPage.length"
+          (selectedPageSize)="handleChangePageSize($event)"
+        ></bp-footer-table>
+      </div>
+    </ng-template>
+  </div>
+</div>
+
+<bp-confirmation-dialog
+  [message]="
+    '¿Estás seguro de eliminar el producto: ' +
+    selectedFinancialProduct?.name +
+    '?'
+  "
+  [visible]="isConfirmationDialogVisible"
+  (onConfirm)="handleConfirm()"
+  (onCancel)="handleCancel()"
+>
+</bp-confirmation-dialog>

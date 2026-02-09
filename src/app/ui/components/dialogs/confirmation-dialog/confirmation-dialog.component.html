@@ -1,0 +1,21 @@
+@if(visible){
+<div class="dialog-overlay">
+  <div class="dialog">
+    <p>
+      {{ message }}
+    </p>
+
+    <bp-splitter></bp-splitter>
+
+    <div class="dialog-actions">
+      <bp-secondary-button class="button" (click)="cancel()"
+        >Cancelar</bp-secondary-button
+      >
+
+      <bp-primary-button class="button" (click)="confirm()"
+        >Confirmar</bp-primary-button
+      >
+    </div>
+  </div>
+</div>
+}
